@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syafiq Eidham - Perunding Takaful</title>
+    <!-- FontAwesome for Social Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(180deg, #d31d24 0%, #a61217 30%, #111111 100%);
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 450px;
+            border-radius: 30px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Header Section */
+        .header-bg {
+            background: linear-gradient(135deg, #e31b23 0%, #9e0b0f 100%);
+            height: 120px;
+            position: relative;
+        }
+
+        .profile-section {
+            text-align: center;
+            padding: 0 20px 20px 20px;
+            position: relative;
+            margin-top: -60px;
+        }
+
+        .profile-pic-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-pic {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        .verified-badge {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            background: #e31b23;
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            border: 2px solid white;
+        }
+
+        .name {
+            font-size: 22px;
+            font-weight: 700;
+            color: #111;
+            margin-top: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .title {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+            margin-top: 2px;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+        }
+
+        .social-icons a {
+            color: #444;
+            font-size: 18px;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover {
+            border-color: #e31b23;
+            color: #e31b23;
+        }
+
+        /* Corporate Logo Placeholder */
+        .logo-container {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .company-logo {
+            max-width: 180px;
+            height: auto;
+        }
+
+        .tagline {
+            font-size: 13px;
+            color: #555;
+            font-style: italic;
+            padding: 0 30px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* Buttons */
+        .btn-container {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            transition: transform 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .btn-red {
+            background: #e31b23;
+            color: white;
+        }
+
+        .btn-green {
+            background: #128c7e;
+            color: white;
+        }
+
+        /* Services Grid Section */
+        .services-section {
+            background: #f9f9f9;
+            padding: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .section-title {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #888;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .service-card i {
+            color: #e31b23;
+            font-size: 16px;
+        }
+
+        /* Form Section */
+        .form-section {
+            padding: 25px 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .form-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #e31b23;
+            font-weight: 700;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .form-sub {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: #444;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            background: #fafafa;
+        }
+
+        .form-control:focus {
+            border-color: #e31b23;
+            background: #fff;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .footer-text {
+            text-align: center;
+            font-size: 11px;
+            color: #999;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Red Accent Top Background -->
+    <div class="header-bg"></div>
+
+    <!-- Profile Area -->
+    <div class="profile-section">
+        <div class="profile-pic-container">
+            <!-- Replace URL below with your actual profile image link -->
+            <img src="https://via.placeholder.com/150" alt="Syafiq Eidham" class="profile-pic">
+            <div class="verified-badge"><i class="fas fa-check"></i></div>
+        </div>
+        <h1 class="name">Syafiq Eidham</h1>
+        <p class="title">Perunding Takaful Profesional</p>
+        
+        <!-- Social Icons Alignment -->
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+
+        <!-- Branding Logo Placeholder -->
+        <div class="logo-container">
+            <!-- Replace URL below with your agency corporate logo asset -->
+            <img src="https://via.placeholder.com/200x50?text=PRUDENTIAL+BSN" alt="Prudential BSN Takaful" class="company-logo">
+        </div>
+
+        <p class="tagline">"Bantu anda semak perlindungan takaful yang sesuai ikut bajet dan keperluan keluarga."</p>
+    </div>
+
+    <!-- Direct Navigation Buttons -->
+    <div class="btn-container">
+        <a href="#semak-pelan" class="btn btn-red">
+            <i class="fas fa-file-alt"></i> Semak Pelan Sesuai
+        </a>
+        <!-- Replace phone number in href below (601XXXXXXXX) -->
+        <a href="https://wa.me/60129656989?text=Hi%20Syafiq,%20saya%20berminat%20tahu%20pasal%20Takaful" target="_blank" class="btn btn-green">
+            <i class="fab fa-whatsapp"></i> WhatsApp Saya
+        </a>
+    </div>
+
+    <!-- Services Section Grid -->
+    <div class="services-section">
+        <h2 class="section-title">Perkhidmatan Ditawarkan</h2>
+        <div class="services-grid">
+            <div class="service-card"><i class="fas fa-heartbeat"></i> Hibah & Medical Card</div>
+            <div class="service-card"><i class="fas fa-briefcase-medical"></i> Pampasan Sakit Kritikal</div>
+            <div class="service-card"><i class="fas fa-shield-alt"></i> Income Protection</div>
+            <div class="service-card"><i class="fas fa-chart-line"></i> Perancangan Kewangan</div>
+        </div>
+    </div>
+
+    <!-- Interactive Lead Capture Form Section -->
+    <div id="semak-pelan" class="form-section">
+        <div class="form-header">
+            <i class="fas fa-edit"></i> Semak Pelan Sesuai
+        </div>
+        <p class="form-sub">Isi maklumat ringkas di bawah. Saya akan bantu semak pilihan pelan yang sesuai ikut bajet dan keperluan anda.</p>
+        
+        <form id="takafulForm">
+            <div class="form-group">
+                <label>Nama Penuh</label>
+                <input type="text" id="nama" class="form-control" placeholder="Cth: Ahmad Bin Ali" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Tarikh Lahir</label>
+                    <input type="date" id="tarikhLahir" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label>Lokasi</label>
+                    <input type="text" id="lokasi" class="form-control" placeholder="Cth: Selangor" required>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Bajet (RM)</label>
+                    <select id="bajet" class="form-control">
+                        <option value="RM50 - RM100">RM50 - RM100</option>
+                        <option value="RM100 - RM150">RM100 - RM150</option>
+                        <option value="RM150 - RM200">RM150 - RM200</option>
+                        <option value="RM200+">RM200 ke atas</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Status</label>
+                    <select id="status" class="form-control">
+                        <option value="Bujang">Bujang</option>
+                        <option value="Berkahwin">Berkahwin</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Status Merokok / Vape</label>
+                <select id="merokok" class="form-control">
+                    <option value="Tidak Merokok / Vape">Tidak Merokok / Vape</option>
+                    <option value="Merokok">Merokok</option>
+                    <option value="Vape">Vape</option>
+                    <option value="Merokok & Vape">Merokok & Vape</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Servis Pilihan Utama</label>
+                <select id="servis" class="form-control">
+                    <option value="Hibah & Medical Card">Hibah & Medical Card</option>
+                    <option value="Pampasan Sakit Kritikal">Pampasan Sakit Kritikal</option>
+                    <option value="Income Protection">Income Protection</option>
+                    <option value="Belum Pasti / Nak Konsultasi">Belum Pasti / Nak Konsultasi</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="sendToWhatsApp()" class="btn btn-red" style="margin-top: 10px;">
+                <i class="fab fa-whatsapp"></i> Hantar Ke WhatsApp
+            </button>
+        </form>
+        <p class="footer-text">Maklumat akan diterima terus, saya akan berikan respon pantas.</p>
+    </div>
+</div>
+
+<script>
+    function sendToWhatsApp() {
+        // Change this to your actual WhatsApp Number (Include country code, e.g., 601XXXXXXXX)
+        const myPhoneNumber = "60129656989"; 
+
+        // Gather data from input elements
+        const nama = document.getElementById('nama').value;
+        const tarikhLahir = document.getElementById('tarikhLahir').value;
+        const lokasi = document.getElementById('lokasi').value;
+        const bajet = document.getElementById('bajet').value;
+        const status = document.getElementById('status').value;
+        const merokok = document.getElementById('merokok').value;
+        const servis = document.getElementById('servis').value;
+
+        if(!nama || !tarikhLahir || !lokasi) {
+            alert("Sila lengkapkan maklumat Nama, Tarikh Lahir dan Lokasi terlebih dahulu.");
+            return;
+        }
+
+        // Format custom message string
+        const textMessage = `Salam Encik Syafiq, saya nak semak pelan Takaful.%0A%0A` +
+                            `*Nama:* ${nama}%0A` +
+                            `*Tarikh Lahir:* ${tarikhLahir}%0A` +
+                            `*Lokasi:* ${lokasi}%0A` +
+                            `*Bajet:* ${bajet}%0A` +
+                            `*Status:* ${status}%0A` +
+                            `*Status Merokok:* ${merokok}%0A` +
+                            `*Servis Pilihan:* ${servis}`;
+
+        // Redirect user browser to WhatsApp API interface
+        window.open(`https://wa.me/${myPhoneNumber}?text=${textMessage}`, '_blank');
+    }
+</script>
+
+</body>
+</html>
